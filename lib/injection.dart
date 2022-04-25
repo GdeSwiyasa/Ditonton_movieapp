@@ -21,7 +21,7 @@ import 'package:ditonton/domain/usecases/tv/get_now_playing_tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_popular_tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_top_rated_tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_show_detail.dart';
+import 'package:ditonton/domain/usecases/tv/get_tv_detail.dart';
 import 'package:ditonton/domain/usecases/tv/get_watchlist_status_tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_watchlist_tv.dart';
 import 'package:ditonton/domain/usecases/tv/remove_watchlist_tv.dart';

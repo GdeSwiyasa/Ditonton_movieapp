@@ -2,7 +2,7 @@ import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_show_detail.dart';
+import 'package:ditonton/domain/usecases/tv/get_tv_detail.dart';
 import 'package:ditonton/domain/usecases/tv/get_watchlist_status_tv.dart';
 import 'package:ditonton/domain/usecases/tv/remove_watchlist_tv.dart';
 import 'package:ditonton/domain/usecases/tv/save_watchlist_tv.dart';
