@@ -1,6 +1,6 @@
 import 'package:ditonton/presentation/pages/about_page.dart';
-import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/tv/home_tv_page.dart';
+import 'package:ditonton/presentation/pages/wactclist_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -37,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
             leading: Icon(Icons.save_alt),
             title: Text('Watchlist'),
             onTap: () {
-              Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+              Navigator.pushNamed(context, WatchlistPage.ROUTE_NAME);
             },
           ),
           ListTile(
