@@ -22,8 +22,7 @@ class DatabaseHelper {
   }
 
   static const String _tblWatchlist = 'watchlist';
-  static const String _tblTVWatchlist = 'tv_watchlist';
-
+  static const String _tblTVShowWatchlist = 'tv_show_watchlist';
   Future<Database> _initDb() async {
     final path = await getDatabasesPath();
     final databasePath = '$path/ditonton.db';
@@ -37,6 +36,14 @@ class DatabaseHelper {
       CREATE TABLE  $_tblWatchlist (
         id INTEGER PRIMARY KEY,
         title TEXT,
+        overview TEXT,
+        posterPath TEXT
+      );
+    ''');
+    await db.execute('''
+      CREATE TABLE  $_tblTVShowWatchlist (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
         overview TEXT,
         posterPath TEXT
       );
@@ -79,15 +86,15 @@ class DatabaseHelper {
     return results;
   }
 
-  Future<int> insertTVShowWatchlist(TvTable tvShowTable) async {
+  Future<int> insertTVShowWatchlist(TvTable tvTable) async {
     final db = await database;
-    return await db!.insert(_tblTVWatchlist, tvShowTable.toJson());
+    return await db!.insert(_tblTVShowWatchlist, tvTable.toJson());
   }
 
   Future<Map<String, dynamic>?> getTVShowById(int id) async {
     final db = await database;
     final results = await db!.query(
-      _tblTVWatchlist,
+      _tblTVShowWatchlist,
       where: 'id = ?',
       whereArgs: [id],
     );
@@ -99,18 +106,19 @@ class DatabaseHelper {
     }
   }
 
-  Future<int> removeTVShowWatchlist(TvTable tvShow) async {
+  Future<int> removeTVShowWatchlist(TvTable tv) async {
     final db = await database;
     return await db!.delete(
-      _tblTVWatchlist,
+      _tblTVShowWatchlist,
       where: 'id = ?',
-      whereArgs: [tvShow.id],
+      whereArgs: [tv.id],
     );
   }
 
   Future<List<Map<String, dynamic>>> getWatchlistTVShows() async {
     final db = await database;
-    final List<Map<String, dynamic>> results = await db!.query(_tblTVWatchlist);
+    final List<Map<String, dynamic>> results =
+        await db!.query(_tblTVShowWatchlist);
 
     return results;
   }
