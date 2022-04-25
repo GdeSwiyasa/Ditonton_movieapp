@@ -1,19 +1,19 @@
 import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tv_show.dart';
-import 'package:ditonton/domain/usecases/get_now_playing_tv_shows.dart';
-import 'package:ditonton/domain/usecases/get_popular_tv_shows.dart';
-import 'package:ditonton/domain/usecases/get_top_rated_tv_shows.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/usecases/tv/get_now_playing_tv.dart';
+import 'package:ditonton/domain/usecases/tv/get_popular_tv.dart';
+import 'package:ditonton/domain/usecases/tv/get_top_rated_tv.dart';
 import 'package:flutter/cupertino.dart';
 
 class TVShowListNotifier extends ChangeNotifier {
-  var _nowPlayingTVShows = <TVShow>[];
-  List<TVShow> get nowPlayingTVShows => _nowPlayingTVShows;
+  var _nowPlayingTVShows = <Tv>[];
+  List<Tv> get nowPlayingTVShows => _nowPlayingTVShows;
 
-  var _popularTVShows = <TVShow>[];
-  List<TVShow> get popularTVShows => _popularTVShows;
+  var _popularTVShows = <Tv>[];
+  List<Tv> get popularTVShows => _popularTVShows;
 
-  var _topRatedTVShows = <TVShow>[];
-  List<TVShow> get topRatedTVShows => _topRatedTVShows;
+  var _topRatedTVShows = <Tv>[];
+  List<Tv> get topRatedTVShows => _topRatedTVShows;
 
   RequestState _nowPlayingState = RequestState.Empty;
   RequestState get nowPlayingState => _nowPlayingState;
@@ -27,9 +27,9 @@ class TVShowListNotifier extends ChangeNotifier {
   String _message = '';
   String get message => _message;
 
-  final GetNowPlayingTVShows getNowPlayingTVShows;
-  final GetPopularTVShows getPopularTVShows;
-  final GetTopRatedTVShows getTopRatedTVShows;
+  final GetNowPlayingTV getNowPlayingTVShows;
+  final GetPopularTV getPopularTVShows;
+  final GetTopRatedTV getTopRatedTVShows;
   TVShowListNotifier({
     required this.getNowPlayingTVShows,
     required this.getPopularTVShows,

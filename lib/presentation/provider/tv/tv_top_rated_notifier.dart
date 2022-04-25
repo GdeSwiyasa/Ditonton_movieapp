@@ -1,16 +1,18 @@
 import 'package:ditonton/common/state_enum.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/usecases/tv/get_top_rated_tv.dart';
 import 'package:flutter/foundation.dart';
 
 class TopRatedTVShowsNotifier extends ChangeNotifier {
-  final GetTopRatedTVShows getTopRatedTVShows;
+  final GetTopRatedTV getTopRatedTVShows;
 
   TopRatedTVShowsNotifier({required this.getTopRatedTVShows});
 
   RequestState _state = RequestState.Empty;
   RequestState get state => _state;
 
-  List<TVShow> _tvShows = [];
-  List<TVShow> get tvShows => _tvShows;
+  List<Tv> _tvShows = [];
+  List<Tv> get tvShows => _tvShows;
 
   String _message = '';
   String get message => _message;

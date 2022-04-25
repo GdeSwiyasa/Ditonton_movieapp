@@ -1,18 +1,18 @@
 import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tv_show.dart';
-import 'package:ditonton/domain/usecases/search_tv_shows.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/usecases/tv/search_tv.dart';
 import 'package:flutter/foundation.dart';
 
 class TVShowsSearchNotifier extends ChangeNotifier {
-  final SearchTVShows searchTVShows;
+  final SearchTV searchTVShows;
 
   TVShowsSearchNotifier({required this.searchTVShows});
 
   RequestState _state = RequestState.Empty;
   RequestState get state => _state;
 
-  List<TVShow> _searchResult = [];
-  List<TVShow> get searchResult => _searchResult;
+  List<Tv> _searchResult = [];
+  List<Tv> get searchResult => _searchResult;
 
   String _message = '';
   String get message => _message;
