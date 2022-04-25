@@ -7,7 +7,7 @@ import 'package:ditonton/data/models/tv/tv_response.dart';
 
 import 'package:http/http.dart' as http;
 
-abstract class TVShowRemoteDataSource {
+abstract class TVRemoteDataSource {
   Future<List<TvModel>> getNowPlayingTVShows();
   Future<TVDetailModel> getTVShowDetail(int id);
   Future<List<TvModel>> getPopularTVShows();
@@ -16,13 +16,13 @@ abstract class TVShowRemoteDataSource {
   Future<List<TvModel>> searchTVShows(String query);
 }
 
-class TVShowRemoteDataSourceImpl implements TVShowRemoteDataSource {
+class TVRemoteDataSourceImpl implements TVRemoteDataSource {
   final http.Client client;
 
   static const API_KEY = 'api_key=2174d146bb9c0eab47529b2e77d6b526';
   static const BASE_URL = 'https://api.themoviedb.org/3';
 
-  TVShowRemoteDataSourceImpl({required this.client});
+  TVRemoteDataSourceImpl({required this.client});
   @override
   Future<List<TvModel>> getNowPlayingTVShows() async {
     final response =
