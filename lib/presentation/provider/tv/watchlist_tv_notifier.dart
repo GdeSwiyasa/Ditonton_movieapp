@@ -17,7 +17,7 @@ class WatchlistTVNotifier extends ChangeNotifier {
 
   final GetWatchlistTV getWatchlistTV;
 
-  Future<void> fetchWatchlistTVShows() async {
+  Future<void> fetchWatchlistTV() async {
     _watchlistState = RequestState.Loading;
     notifyListeners();
 
