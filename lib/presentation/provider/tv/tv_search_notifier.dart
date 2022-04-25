@@ -3,10 +3,10 @@ import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:ditonton/domain/usecases/tv/search_tv.dart';
 import 'package:flutter/foundation.dart';
 
-class TVShowsSearchNotifier extends ChangeNotifier {
+class TVSearchNotifier extends ChangeNotifier {
   final SearchTV searchTVShows;
 
-  TVShowsSearchNotifier({required this.searchTVShows});
+  TVSearchNotifier({required this.searchTVShows});
 
   RequestState _state = RequestState.Empty;
   RequestState get state => _state;

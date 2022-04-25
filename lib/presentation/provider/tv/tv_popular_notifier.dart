@@ -3,9 +3,9 @@ import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_popular_tv.dart';
 import 'package:flutter/cupertino.dart';
 
-class PopularTVShowsNotifier extends ChangeNotifier {
+class PopularTVNotifier extends ChangeNotifier {
   final GetPopularTV usecase;
-  PopularTVShowsNotifier(this.usecase);
+  PopularTVNotifier(this.usecase);
 
   RequestState _requestState = RequestState.Empty;
   RequestState get requestState => _requestState;

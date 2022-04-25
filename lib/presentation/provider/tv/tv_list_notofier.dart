@@ -5,7 +5,7 @@ import 'package:ditonton/domain/usecases/tv/get_popular_tv.dart';
 import 'package:ditonton/domain/usecases/tv/get_top_rated_tv.dart';
 import 'package:flutter/cupertino.dart';
 
-class TVShowListNotifier extends ChangeNotifier {
+class TVListNotifier extends ChangeNotifier {
   var _nowPlayingTVShows = <Tv>[];
   List<Tv> get nowPlayingTVShows => _nowPlayingTVShows;
 
@@ -30,7 +30,7 @@ class TVShowListNotifier extends ChangeNotifier {
   final GetNowPlayingTV getNowPlayingTVShows;
   final GetPopularTV getPopularTVShows;
   final GetTopRatedTV getTopRatedTVShows;
-  TVShowListNotifier({
+  TVListNotifier({
     required this.getNowPlayingTVShows,
     required this.getPopularTVShows,
     required this.getTopRatedTVShows,
