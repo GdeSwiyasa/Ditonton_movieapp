@@ -2,6 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/presentation/pages/tv/detail_tv_page.dart';
+import 'package:ditonton/presentation/pages/tv/popular_tv_page.dart';
+import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
+import 'package:ditonton/presentation/pages/tv/top_rated_tv_page.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notofier.dart';
 import 'package:ditonton/presentation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +40,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
         actions: [
           IconButton(
             onPressed: () {
-              // Navigator.pushNamed(context, SearchTVShowsPage.ROUTE_NAME);
+              Navigator.pushNamed(context, SearchTvPage.ROUTE_NAME);
             },
             icon: Icon(Icons.search),
           ),
@@ -67,7 +71,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
               _buildSubHeading(
                   title: 'Popular',
                   onTap: () {
-                    // Navigator.pushNamed(context, PopularTVPage.ROUTE_NAME);
+                    Navigator.pushNamed(context, PopularTvPage.ROUTE_NAME);
                   }),
               Consumer<TVListNotifier>(builder: (context, data, child) {
                 final state = data.popularTVShowsState;
@@ -84,7 +88,7 @@ class _HomeTVPageState extends State<HomeTVPage> {
               _buildSubHeading(
                 title: 'Top Rated',
                 onTap: () {
-                  // Navigator.pushNamed(context, TopRatedTVPage.ROUTE_NAME);
+                  Navigator.pushNamed(context, TopRatedTvPage.ROUTE_NAME);
                 },
               ),
               Consumer<TVListNotifier>(builder: (context, data, child) {
@@ -145,11 +149,11 @@ class TVList extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: InkWell(
               onTap: () {
-                // Navigator.pushNamed(
-                //   context,
-                //   TVDetailPage.ROUTE_NAME,
-                //   arguments: tvShow.id,
-                // );
+                Navigator.pushNamed(
+                  context,
+                  DetailTvPage.ROUTE_NAME,
+                  arguments: tvShow.id,
+                );
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
