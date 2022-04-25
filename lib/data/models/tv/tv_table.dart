@@ -1,4 +1,5 @@
 import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class TvTable extends Equatable {
@@ -14,7 +15,7 @@ class TvTable extends Equatable {
   final String? posterPath;
   final String? overview;
 
-  factory TvTable.fromEntity(TvTable tvShow) => TvTable(
+  factory TvTable.fromEntity(TVDetail tvShow) => TvTable(
         id: tvShow.id,
         name: tvShow.name,
         posterPath: tvShow.posterPath,
