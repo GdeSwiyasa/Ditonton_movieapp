@@ -1,12 +1,12 @@
 import 'package:ditonton/data/models/tv/tv_model.dart';
 import 'package:equatable/equatable.dart';
 
-class TVShowResponse extends Equatable {
+class TVResponse extends Equatable {
   final List<TvModel> tvShowList;
 
-  TVShowResponse({required this.tvShowList});
+  TVResponse({required this.tvShowList});
 
-  factory TVShowResponse.fromJson(Map<String, dynamic> json) => TVShowResponse(
+  factory TVResponse.fromJson(Map<String, dynamic> json) => TVResponse(
         tvShowList: List<TvModel>.from((json['results'] as List)
             .map((x) => TvModel.fromJson(x))
             .where((element) => element.backdropPath != null)),
