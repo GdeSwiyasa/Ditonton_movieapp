@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => HomeTVPage());
             case DetailTvPage.ROUTE_NAME:
               final id = settings.arguments as int;
-              return MaterialPageRoute(builder: (_) => DetailTvPage());
+              return MaterialPageRoute(builder: (_) => DetailTvPage(id: id));
             case PopularTvPage.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => PopularTvPage());
             case TopRatedTvPage.ROUTE_NAME:
