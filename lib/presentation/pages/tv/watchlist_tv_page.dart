@@ -45,6 +45,10 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
                 child: CircularProgressIndicator(),
               );
             } else if (data.watchlistState == RequestState.Loaded) {
+              if (data.watchlistTV.isEmpty)
+                return Center(
+                  child: Text('Add your favorite Tv Series!', style: kBodyText),
+                );
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final tv = data.watchlistTV[index];
