@@ -28,19 +28,19 @@ class _FakeGetWatchlistTVShows_0 extends _i1.Fake
 /// A class which mocks [WatchlistTVShowNotifier].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockWatchlistTVShowNotifier extends _i1.Mock
+class MockWatchlistTVNotifier extends _i1.Mock
     implements _i3.WatchlistTVNotifier {
   MockWatchlistTVShowNotifier() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.GetWatchlistTV get getWatchlistTVShows =>
-      (super.noSuchMethod(Invocation.getter(#getWatchlistTVShows),
+  _i2.GetWatchlistTV get getWatchlistTV =>
+      (super.noSuchMethod(Invocation.getter(#getWatchlistTV),
           returnValue: _FakeGetWatchlistTVShows_0()) as _i2.GetWatchlistTV);
   @override
-  List<_i4.Tv> get watchlistTVShows =>
-      (super.noSuchMethod(Invocation.getter(#watchlistTVShows),
+  List<_i4.Tv> get watchlistTV =>
+      (super.noSuchMethod(Invocation.getter(#watchlistTV),
           returnValue: <_i4.Tv>[]) as List<_i4.Tv>);
   @override
   _i5.RequestState get watchlistState =>
@@ -55,8 +55,8 @@ class MockWatchlistTVShowNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i6.Future<void> fetchWatchlistTVShows() =>
-      (super.noSuchMethod(Invocation.method(#fetchWatchlistTVShows, []),
+  _i6.Future<void> fetchWatchlistTV() =>
+      (super.noSuchMethod(Invocation.method(#fetchWatchlistTV, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i6.Future<void>);
   @override

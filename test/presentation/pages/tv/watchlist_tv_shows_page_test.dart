@@ -14,10 +14,10 @@ import 'watchlist_tv_shows_page_test.mocks.dart';
 
 @GenerateMocks([WatchlistTVNotifier])
 void main() {
-  late MockWatchlistTVShowNotifier mockNotifier;
+  late MockWatchlistTVNotifier mockNotifier;
 
   setUp(() {
-    mockNotifier = MockWatchlistTVShowNotifier();
+    mockNotifier = MockWatchlistTVNotifier();
   });
 
   Widget _makeTestableWidget(Widget body) {
@@ -33,7 +33,7 @@ void main() {
     testWidgets('watchlist tv shows should display',
         (WidgetTester tester) async {
       when(mockNotifier.watchlistState).thenReturn(RequestState.Loaded);
-      when(mockNotifier.watchlistTVShows).thenReturn(testTVShowList);
+      when(mockNotifier.watchlistTV).thenReturn(testTVShowList);
 
       await tester.pumpWidget(_makeTestableWidget(WatchlistTvPage()));
 
@@ -43,11 +43,11 @@ void main() {
     testWidgets('message for feedback should display when data is empty',
         (WidgetTester tester) async {
       when(mockNotifier.watchlistState).thenReturn(RequestState.Loaded);
-      when(mockNotifier.watchlistTVShows).thenReturn(<Tv>[]);
+      when(mockNotifier.watchlistTV).thenReturn(<Tv>[]);
 
       await tester.pumpWidget(_makeTestableWidget(WatchlistTvPage()));
 
-      expect(find.text('Add your favorite movie!'), findsOneWidget);
+      expect(find.text('Add your favorite Tv Series!'), findsOneWidget);
     });
 
     testWidgets('loading indicator should display when getting data',

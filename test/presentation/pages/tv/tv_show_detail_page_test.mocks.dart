@@ -54,17 +54,17 @@ class MockTVShowDetailNotifier extends _i1.Mock
   }
 
   @override
-  _i2.GetTVDetail get getTVShowDetail =>
-      (super.noSuchMethod(Invocation.getter(#getTVShowDetail),
+  _i2.GetTVDetail get getTVDetail =>
+      (super.noSuchMethod(Invocation.getter(#getTVDetail),
           returnValue: _FakeGetTVShowDetail_0()) as _i2.GetTVDetail);
   @override
-  _i3.GetTVRecommendations get getTVShowRecommendations =>
-      (super.noSuchMethod(Invocation.getter(#getTVShowRecommendations),
+  _i3.GetTVRecommendations get getTVRecommendations =>
+      (super.noSuchMethod(Invocation.getter(#getTVRecommendations),
               returnValue: _FakeGetTVShowRecommendations_1())
           as _i3.GetTVRecommendations);
   @override
-  _i4.GetWatchListStatusTV get getWatchListStatusTVShow =>
-      (super.noSuchMethod(Invocation.getter(#getWatchListStatusTVShow),
+  _i4.GetWatchListStatusTV get getWatchListStatusTV =>
+      (super.noSuchMethod(Invocation.getter(#getWatchListStatusTV),
               returnValue: _FakeGetWatchListStatusTVShow_2())
           as _i4.GetWatchListStatusTV);
   @override
@@ -76,16 +76,15 @@ class MockTVShowDetailNotifier extends _i1.Mock
       Invocation.getter(#removeWatchlist),
       returnValue: _FakeRemoveWatchlistTVShow_4()) as _i6.RemoveWatchlistTV);
   @override
-  _i7.TVDetail get tvShowDetail =>
-      (super.noSuchMethod(Invocation.getter(#tvShowDetail),
-          returnValue: _FakeTVShowDetail_5()) as _i7.TVDetail);
+  _i7.TVDetail get tvDetail => (super.noSuchMethod(Invocation.getter(#tvDetail),
+      returnValue: _FakeTVShowDetail_5()) as _i7.TVDetail);
   @override
-  _i9.RequestState get tvShowState =>
-      (super.noSuchMethod(Invocation.getter(#tvShowState),
+  _i9.RequestState get tvState =>
+      (super.noSuchMethod(Invocation.getter(#tvState),
           returnValue: _i9.RequestState.Empty) as _i9.RequestState);
   @override
-  List<_i10.Tv> get tvShowRecommendations =>
-      (super.noSuchMethod(Invocation.getter(#tvShowRecommendations),
+  List<_i10.Tv> get tvRecommendations =>
+      (super.noSuchMethod(Invocation.getter(#tvRecommendations),
           returnValue: <_i10.Tv>[]) as List<_i10.Tv>);
   @override
   _i9.RequestState get recommendationState =>
@@ -108,7 +107,7 @@ class MockTVShowDetailNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i11.Future<void> fetchTVShowDetail(int? id) => (super.noSuchMethod(
+  _i11.Future<void> fetchTVDetail(int? id) => (super.noSuchMethod(
       Invocation.method(#fetchTVShowDetail, [id]),
       returnValue: Future<void>.value(),
       returnValueForMissingStub: Future<void>.value()) as _i11.Future<void>);
