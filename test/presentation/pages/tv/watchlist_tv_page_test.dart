@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import 'watchlist_tv_shows_page_test.mocks.dart';
+import 'watchlist_tv_page_test.mocks.dart';
 
 @GenerateMocks([WatchlistTVNotifier])
 void main() {

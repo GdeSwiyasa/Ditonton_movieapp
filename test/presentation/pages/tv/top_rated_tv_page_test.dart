@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import 'top_rated_tv_shows_page_test.mocks.dart';
+import 'top_rated_tv_page_test.mocks.dart';
 
 @GenerateMocks([TopRatedTVNotifier])
 void main() {

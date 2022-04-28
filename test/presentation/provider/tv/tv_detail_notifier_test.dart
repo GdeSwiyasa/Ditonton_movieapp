@@ -12,7 +12,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import 'tv_show_detail_notifier_test.mocks.dart';
+import 'tv_detail_notifier_test.mocks.dart';
 
 @GenerateMocks([
   GetTVDetail,

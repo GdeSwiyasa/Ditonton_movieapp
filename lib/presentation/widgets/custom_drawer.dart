@@ -1,4 +1,5 @@
 import 'package:ditonton/presentation/pages/about_page.dart';
+import 'package:ditonton/presentation/pages/movie/home_movie_page.dart';
 import 'package:ditonton/presentation/pages/tv/home_tv_page.dart';
 import 'package:ditonton/presentation/pages/wactclist_page.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class CustomDrawer extends StatelessWidget {
             title: Text('Movies'),
             onTap: () {
               Navigator.pop(context);
+              Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
             },
           ),
           ListTile(

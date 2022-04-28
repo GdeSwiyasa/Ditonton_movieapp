@@ -23,9 +23,9 @@ void main() {
   });
 
   group('get Now Playing TV Shows', () {
-    final testTVShowList =
+    final testtvList =
         TVResponse.fromJson(json.decode(readJson('dummy_data/on_the_air.json')))
-            .tvShowList;
+            .tvList;
 
     test('should return list of TVShow Model when the response code is 200',
         () async {
@@ -40,7 +40,7 @@ void main() {
       // act
       final result = await dataSourceImpl.getNowPlayingTVShows();
       // assert
-      expect(result, equals(testTVShowList));
+      expect(result, equals(testtvList));
     });
 
     test(
@@ -90,9 +90,9 @@ void main() {
   });
 
   group('Get TV Show Recommendations', () {
-    final testRecommendationTVShowList = TVResponse.fromJson(
+    final testRecommendationtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/tv_show_recommendations.json')))
-        .tvShowList;
+        .tvList;
     final tId = 1;
     test(
         'should be return  tv show recommendation when the response code is 200',
@@ -105,7 +105,7 @@ void main() {
       // act
       final result = await dataSourceImpl.getTVShowRecommendations(tId);
       //assert
-      expect(result, equals(testRecommendationTVShowList));
+      expect(result, equals(testRecommendationtvList));
     });
 
     test('should throw Server Exception when the response code is 404 or other',
@@ -122,9 +122,9 @@ void main() {
   });
 
   group('get Popular TVShows', () {
-    final testTVShowList = TVResponse.fromJson(
+    final testtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/popular_tv_shows.json')))
-        .tvShowList;
+        .tvList;
 
     test('should return list of tv shows when response is success (200)',
         () async {
@@ -139,7 +139,7 @@ void main() {
       // act
       final result = await dataSourceImpl.getPopularTVShows();
       // assert
-      expect(result, testTVShowList);
+      expect(result, testtvList);
     });
 
     test(
@@ -155,9 +155,9 @@ void main() {
     });
   });
   group('get Top Rated TVShows', () {
-    final testTVShowList = TVResponse.fromJson(
+    final testtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/top_rated_tv_shows.json')))
-        .tvShowList;
+        .tvList;
 
     test('should return list of tv shows when response code is 200 ', () async {
       // arrange
@@ -171,7 +171,7 @@ void main() {
       // act
       final result = await dataSourceImpl.getTopRatedTVShows();
       // assert
-      expect(result, testTVShowList);
+      expect(result, testtvList);
     });
 
     test('should throw ServerException when response code is other than 200',
@@ -189,7 +189,7 @@ void main() {
   group('search tv shows', () {
     final tSearchResult = TVResponse.fromJson(
             json.decode(readJson('dummy_data/search_avengers_tv_show.json')))
-        .tvShowList;
+        .tvList;
     final tQuery = 'Avengers';
     test('should be return list of tv shows when response code is 200',
         () async {

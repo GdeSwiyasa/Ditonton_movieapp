@@ -133,9 +133,9 @@ Row _buildSubHeading({required String title, required Function() onTap}) {
 }
 
 class TVList extends StatelessWidget {
-  final List<Tv> tvShows;
+  final List<Tv> tv;
 
-  TVList(this.tvShows);
+  TVList(this.tv);
 
   @override
   Widget build(BuildContext context) {
@@ -144,21 +144,18 @@ class TVList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          final tvShow = tvShows[index];
+          final tvs = tv[index];
           return Container(
             padding: const EdgeInsets.all(8),
             child: InkWell(
               onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  DetailTvPage.ROUTE_NAME,
-                  arguments: tvShow.id,
-                );
+                Navigator.pushNamed(context, DetailTvPage.ROUTE_NAME,
+                    arguments: tvs.id);
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 child: CachedNetworkImage(
-                  imageUrl: '$BASE_IMAGE_URL${tvShow.posterPath}',
+                  imageUrl: '$BASE_IMAGE_URL${tvs.posterPath}',
                   placeholder: (context, url) => Center(
                     child: CircularProgressIndicator(),
                   ),
@@ -168,7 +165,7 @@ class TVList extends StatelessWidget {
             ),
           );
         },
-        itemCount: tvShows.length,
+        itemCount: tv.length,
       ),
     );
   }

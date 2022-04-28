@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import 'tv_show_detail_page_test.mocks.dart';
+import 'tv__detail_page_test.mocks.dart';
 
 @GenerateMocks([TVDetailNotifier])
 void main() {

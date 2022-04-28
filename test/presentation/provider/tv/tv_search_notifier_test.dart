@@ -8,7 +8,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../dummy_data/dummy_objects.dart';
-import 'tv_shows_search_notifier_test.mocks.dart';
+import 'tv_search_notifier_test.mocks.dart';
 
 @GenerateMocks([SearchTV])
 void main() {
@@ -20,7 +20,7 @@ void main() {
     listenerCallCount = 0;
     mockSearchTVShows = MockSearchTVShows();
     provider = TVSearchNotifier(
-      searchTVShows: mockSearchTVShows,
+      searchTV: mockSearchTVShows,
     )..addListener(() {
         listenerCallCount += 1;
       });
@@ -34,7 +34,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      provider.fetchTVShowsSearch(tQuery);
+      provider.fetchTVSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loading);
     });
@@ -45,7 +45,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      await provider.fetchTVShowsSearch(tQuery);
+      await provider.fetchTVSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loaded);
       expect(provider.searchResult, testTVShowList);
@@ -57,7 +57,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
-      await provider.fetchTVShowsSearch(tQuery);
+      await provider.fetchTVSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Error);
       expect(provider.message, 'Server Failure');
