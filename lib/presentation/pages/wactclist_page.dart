@@ -22,8 +22,8 @@ class WatchlistPage extends StatelessWidget {
               bottom: TabBar(
                 indicatorColor: kMikadoYellow,
                 tabs: [
-                  _buildTabBarItem('Movies', Icons.movie_creation_outlined),
-                  _buildTabBarItem('TV Show', Icons.live_tv_rounded),
+                  _buildTabBarItem('Movies'),
+                  _buildTabBarItem('TV Show'),
                 ],
               ),
             ),
@@ -39,17 +39,8 @@ class WatchlistPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTabBarItem(String title, IconData iconData) => Padding(
+  Widget _buildTabBarItem(String title) => Padding(
         padding: EdgeInsets.only(top: 4.0, bottom: 12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(iconData),
-            SizedBox(
-              width: 12.0,
-            ),
-            Text(title),
-          ],
-        ),
+        child: Text(title),
       );
 }
