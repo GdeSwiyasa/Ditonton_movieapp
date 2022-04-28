@@ -59,13 +59,13 @@ void main() {
   group('Get TV Show Detail', () {
     final tId = 2;
     final testTVDetail = TVDetailModel.fromJson(
-        json.decode(readJson('dummy_data/tv_show_detail.json')));
+        json.decode(readJson('dummy_data/tv_detail.json')));
     test('should be return tv show detail when the response code is 200',
         () async {
       //arrage
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/$tId?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-                  readJson('dummy_data/tv_show_detail.json'), 200,
+                  readJson('dummy_data/tv_detail.json'), 200,
                   headers: {
                     HttpHeaders.contentTypeHeader:
                         'application/json; charset=utf-8',
@@ -91,7 +91,7 @@ void main() {
 
   group('Get TV Show Recommendations', () {
     final testRecommendationtvList = TVResponse.fromJson(
-            json.decode(readJson('dummy_data/tv_show_recommendations.json')))
+            json.decode(readJson('dummy_data/tv_recommendations.json')))
         .tvShowList;
     final tId = 1;
     test(
@@ -101,7 +101,7 @@ void main() {
       when(mockHttpClient
               .get(Uri.parse('$BASE_URL/tv/$tId/recommendations?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/tv_show_recommendations.json'), 200));
+              readJson('dummy_data/tv_recommendations.json'), 200));
       // act
       final result = await dataSourceImpl.getTVShowRecommendations(tId);
       //assert
@@ -122,16 +122,16 @@ void main() {
   });
 
   group('get Popular TVShows', () {
-    final testtvList = TVResponse.fromJson(
-            json.decode(readJson('dummy_data/popular_tv_shows.json')))
-        .tvShowList;
+    final testtvList =
+        TVResponse.fromJson(json.decode(readJson('dummy_data/popular_tv.json')))
+            .tvShowList;
 
     test('should return list of tv shows when response is success (200)',
         () async {
       // arrange
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/popular?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-                  readJson('dummy_data/popular_tv_shows.json'), 200,
+                  readJson('dummy_data/popular_tv.json'), 200,
                   headers: {
                     HttpHeaders.contentTypeHeader:
                         'application/json; charset=utf-8',
@@ -156,14 +156,14 @@ void main() {
   });
   group('get Top Rated TVShows', () {
     final testtvList = TVResponse.fromJson(
-            json.decode(readJson('dummy_data/top_rated_tv_shows.json')))
+            json.decode(readJson('dummy_data/top_rated_tv.json')))
         .tvShowList;
 
     test('should return list of tv shows when response code is 200 ', () async {
       // arrange
       when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/top_rated?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-                  readJson('dummy_data/top_rated_tv_shows.json'), 200,
+                  readJson('dummy_data/top_rated_tv.json'), 200,
                   headers: {
                     HttpHeaders.contentTypeHeader:
                         'application/json; charset=utf-8',
@@ -188,7 +188,7 @@ void main() {
 
   group('search tv shows', () {
     final tSearchResult = TVResponse.fromJson(
-            json.decode(readJson('dummy_data/search_avengers_tv_show.json')))
+            json.decode(readJson('dummy_data/search_avengers_tv.json')))
         .tvShowList;
     final tQuery = 'Avengers';
     test('should be return list of tv shows when response code is 200',
@@ -197,7 +197,7 @@ void main() {
       when(mockHttpClient
               .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tQuery')))
           .thenAnswer((_) async => http.Response(
-                  readJson('dummy_data/search_avengers_tv_show.json'), 200,
+                  readJson('dummy_data/search_avengers_tv.json'), 200,
                   headers: {
                     HttpHeaders.contentTypeHeader:
                         'application/json; charset=utf-8',
