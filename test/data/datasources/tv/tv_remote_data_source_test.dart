@@ -25,7 +25,7 @@ void main() {
   group('get Now Playing TV Shows', () {
     final testtvList =
         TVResponse.fromJson(json.decode(readJson('dummy_data/on_the_air.json')))
-            .tvList;
+            .tvShowList;
 
     test('should return list of TVShow Model when the response code is 200',
         () async {
@@ -92,7 +92,7 @@ void main() {
   group('Get TV Show Recommendations', () {
     final testRecommendationtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/tv_show_recommendations.json')))
-        .tvList;
+        .tvShowList;
     final tId = 1;
     test(
         'should be return  tv show recommendation when the response code is 200',
@@ -124,7 +124,7 @@ void main() {
   group('get Popular TVShows', () {
     final testtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/popular_tv_shows.json')))
-        .tvList;
+        .tvShowList;
 
     test('should return list of tv shows when response is success (200)',
         () async {
@@ -157,7 +157,7 @@ void main() {
   group('get Top Rated TVShows', () {
     final testtvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/top_rated_tv_shows.json')))
-        .tvList;
+        .tvShowList;
 
     test('should return list of tv shows when response code is 200 ', () async {
       // arrange
@@ -189,7 +189,7 @@ void main() {
   group('search tv shows', () {
     final tSearchResult = TVResponse.fromJson(
             json.decode(readJson('dummy_data/search_avengers_tv_show.json')))
-        .tvList;
+        .tvShowList;
     final tQuery = 'Avengers';
     test('should be return list of tv shows when response code is 200',
         () async {

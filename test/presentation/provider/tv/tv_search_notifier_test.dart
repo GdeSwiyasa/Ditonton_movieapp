@@ -20,7 +20,7 @@ void main() {
     listenerCallCount = 0;
     mockSearchTVShows = MockSearchTVShows();
     provider = TVSearchNotifier(
-      searchTV: mockSearchTVShows,
+      searchTVShows: mockSearchTVShows,
     )..addListener(() {
         listenerCallCount += 1;
       });
@@ -34,7 +34,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      provider.fetchTVSearch(tQuery);
+      provider.fetchTVShowsSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loading);
     });
@@ -45,7 +45,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      await provider.fetchTVSearch(tQuery);
+      await provider.fetchTVShowsSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Loaded);
       expect(provider.searchResult, testTVShowList);
@@ -57,7 +57,7 @@ void main() {
       when(mockSearchTVShows.execute(tQuery))
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
-      await provider.fetchTVSearch(tQuery);
+      await provider.fetchTVShowsSearch(tQuery);
       // assert
       expect(provider.state, RequestState.Error);
       expect(provider.message, 'Server Failure');

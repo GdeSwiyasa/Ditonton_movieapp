@@ -19,7 +19,7 @@ void main() {
   setUp(() {
     listenerCallCount = 0;
     mockGetTopRatedTVShows = MockGetTopRatedTVShows();
-    notifier = TopRatedTVNotifier(getTopRatedTV: mockGetTopRatedTVShows)
+    notifier = TopRatedTVNotifier(getTopRatedTVShows: mockGetTopRatedTVShows)
       ..addListener(() {
         listenerCallCount++;
       });
@@ -31,7 +31,7 @@ void main() {
       when(mockGetTopRatedTVShows.execute())
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      notifier.fetchTopRatedTV();
+      notifier.fetchTopRatedTVShows();
       // assert
       expect(notifier.state, RequestState.Loading);
       expect(listenerCallCount, 1);
@@ -43,10 +43,10 @@ void main() {
       when(mockGetTopRatedTVShows.execute())
           .thenAnswer((_) async => Right(testTVShowList));
       // act
-      await notifier.fetchTopRatedTV();
+      await notifier.fetchTopRatedTVShows();
       // assert
       expect(notifier.state, RequestState.Loaded);
-      expect(notifier.tv, testTVShowList);
+      expect(notifier.tvShows, testTVShowList);
       expect(listenerCallCount, 2);
     });
 
@@ -55,7 +55,7 @@ void main() {
       when(mockGetTopRatedTVShows.execute())
           .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
       // act
-      await notifier.fetchTopRatedTV();
+      await notifier.fetchTopRatedTVShows();
       // assert
       expect(notifier.state, RequestState.Error);
       expect(notifier.message, 'Server Failure');
