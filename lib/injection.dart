@@ -52,7 +52,7 @@ void init() {
   // provider
   //MOVIE
   locator.registerFactory(
-    () => MovieDetailBloc(locator()),
+    () => MovieDetailBloc(getMovieDetail: locator()),
   );
   locator.registerFactory(
     () => MovieNowPlayingListBloc(locator()),
