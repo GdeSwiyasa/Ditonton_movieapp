@@ -41,13 +41,17 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
                 child: CircularProgressIndicator(),
               );
             } else if (state is TvWatchlistHasData) {
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final tv = state.result[index];
-                  return TvCardList(tv);
-                },
-                itemCount: state.result.length,
-              );
+              return state.result.length == 0
+                  ? Center(
+                      child: Text("Ups no watchlist tv series found"),
+                    )
+                  : ListView.builder(
+                      itemBuilder: (context, index) {
+                        final tv = state.result[index];
+                        return TvCardList(tv);
+                      },
+                      itemCount: state.result.length,
+                    );
             } else if (state is TvWatchlistError) {
               return Center(
                 key: Key('error_message'),
