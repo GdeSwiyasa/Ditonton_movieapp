@@ -9,7 +9,7 @@ part 'movie_detail_event.dart';
 class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieDetail getMovieDetail;
 
-  MovieDetailBloc(this.getMovieDetail) : super(MovieDetailEmpty()) {
+  MovieDetailBloc({required this.getMovieDetail}) : super(MovieDetailEmpty()) {
     on<OnFetchMovieDetail>((event, emit) async {
       emit(MovieDetailLoading());
 
