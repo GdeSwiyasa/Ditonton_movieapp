@@ -1,6 +1,7 @@
 import 'package:ditonton/data/datasources/db/database_helper.dart';
 import 'package:ditonton/data/datasources/movie/movie_local_data_source.dart';
 import 'package:ditonton/data/datasources/movie/movie_remote_data_source.dart';
+import 'package:ditonton/data/datasources/ssl/ssl_pining.dart';
 import 'package:ditonton/data/datasources/tv/tv_local_data_source.dart';
 import 'package:ditonton/data/datasources/tv/tv_remote_data_source.dart';
 import 'package:ditonton/data/repositories/movie_repository_impl.dart';
@@ -49,7 +50,7 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 
 void init() {
-  // provider
+  // BLOC
   //MOVIE
   locator.registerFactory(
     () => MovieDetailBloc(getMovieDetail: locator()),
@@ -64,13 +65,13 @@ void init() {
     () => MovieTopRatedListBloc(locator()),
   );
   locator.registerFactory(
-    () => MovieRecommendationsBloc(locator()),
+    () => MovieRecommendationsBloc(getMovieRecommendations: locator()),
   );
   locator.registerFactory(
-    () => MovieSearchBloc(locator()),
+    () => MovieSearchBloc(searchMovies: locator()),
   );
   locator.registerFactory(
-    () => MovieWatchlistBloc(locator()),
+    () => MovieWatchlistBloc(getWatchlistMovies: locator()),
   );
   locator.registerFactory(
     () => MovieWachlistStatusBloc(
@@ -82,16 +83,16 @@ void init() {
 
   //TV SERIES
   locator.registerFactory(
-    () => TvDetailBloc(locator()),
+    () => TvDetailBloc(getTvDetail: locator()),
   );
   locator.registerFactory(
     () => TvNowPlayingBloc(locator()),
   );
   locator.registerFactory(
-    () => TvRecommendationsBloc(locator()),
+    () => TvRecommendationsBloc(getTvRecommendations: locator()),
   );
   locator.registerFactory(
-    () => TvSearchBloc(locator()),
+    () => TvSearchBloc(TvSearch: locator()),
   );
   locator.registerFactory(
     () => TvPopularBloc(locator()),
@@ -166,5 +167,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => SSLPinning.client);
 }
