@@ -29,13 +29,16 @@ import 'package:ditonton/presentation/pages/tv/popular_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/top_rated_tv_page.dart';
 import 'package:ditonton/presentation/pages/wactclist_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   di.init();
   runApp(MyApp());
 }
