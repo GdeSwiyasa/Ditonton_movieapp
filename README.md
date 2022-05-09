@@ -14,3 +14,5 @@ Pastikan untuk memeriksa kembali seluruh hasil testing pada submissionmu sebelum
 Terdapat berkas `test.sh` pada repository ini. Jika kamu menerapkan modular pada project yang dijalankan, kamu dapat memanfaatkan berkas `test.sh` yang ada.
 
 Jika terdapat error ketika menjalankan script, pastikan untuk menginisiasikan terlebih dahulu project-nya menggunakan `git init`.
+
+[![Codemagic build status](https://api.codemagic.io/apps/627796721c29dae220d6789e/627796721c29dae220d6789d/status_badge.svg)](https://codemagic.io/apps/627796721c29dae220d6789e/627796721c29dae220d6789d/latest_build)
