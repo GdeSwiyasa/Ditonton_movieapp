@@ -43,12 +43,6 @@ import 'package:ditonton/presentation/bloc/tv/tv_recommendations/tv_recommendati
 import 'package:ditonton/presentation/bloc/tv/tv_search/tv_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_watchlist_status/tv_watchlist_status_bloc.dart';
-// import 'package:ditonton/presentation/provider/tv/tv_detail_notifier.dart';
-// import 'package:ditonton/presentation/provider/tv/tv_list_notofier.dart';
-// import 'package:ditonton/presentation/provider/tv/tv_popular_notifier.dart';
-// import 'package:ditonton/presentation/provider/tv/tv_search_notifier.dart';
-// import 'package:ditonton/presentation/provider/tv/tv_top_rated_notifier.dart';
-// import 'package:ditonton/presentation/provider/tv/watchlist_tv_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
