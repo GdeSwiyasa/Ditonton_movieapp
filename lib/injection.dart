@@ -35,6 +35,14 @@ import 'package:ditonton/presentation/bloc/movie/movie_recommendations/movie_rec
 import 'package:ditonton/presentation/bloc/movie/movie_search/movie_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_watchlist/movie_watchlist_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_watchlist_status/movie_watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_detail/tv_detail_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_now_playing_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_popular_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_top_rated_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_recommendations/tv_recommendations_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_search/tv_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_watchlist/tv_watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_watchlist_status/tv_watchlist_status_bloc.dart';
 // import 'package:ditonton/presentation/provider/tv/tv_detail_notifier.dart';
 // import 'package:ditonton/presentation/provider/tv/tv_list_notofier.dart';
 // import 'package:ditonton/presentation/provider/tv/tv_popular_notifier.dart';
@@ -79,27 +87,31 @@ void init() {
   );
 
   //TV SERIES
-  // locator.registerFactory(
-  //   () => TVListNotifier(
-  //     getNowPlayingTVShows: locator(),
-  //     getPopularTVShows: locator(),
-  //     getTopRatedTVShows: locator(),
-  //   ),
-  // );
-  // locator.registerFactory(
-  //   () => TVDetailNotifier(
-  //     getTVDetail: locator(),
-  //     getTVRecommendations: locator(),
-  //     saveWatchlist: locator(),
-  //     getWatchListStatusTV: locator(),
-  //     removeWatchlist: locator(),
-  //   ),
-  // );
-  // locator.registerFactory(() => PopularTVNotifier(locator()));
-  // locator
-  //     .registerFactory(() => TopRatedTVNotifier(getTopRatedTVShows: locator()));
-  // locator.registerFactory(() => TVSearchNotifier(searchTVShows: locator()));
-  // locator.registerFactory(() => WatchlistTVNotifier(getWatchlistTV: locator()));
+  locator.registerFactory(
+    () => TvDetailBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvNowPlayingBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvRecommendationsBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvSearchBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvPopularBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvTopRatedBloc(locator()),
+  );
+  locator.registerFactory(
+    () => TvWatchlistBloc(locator()),
+  );
+  locator.registerFactory(() => TvWatchlistStatusBloc(
+      saveWatchlistTV: locator(),
+      removeWatchlistTV: locator(),
+      getWatchListStatusTV: locator()));
 
   // use case
   //MOVIE
