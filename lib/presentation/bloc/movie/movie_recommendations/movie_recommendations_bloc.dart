@@ -11,7 +11,7 @@ class MovieRecommendationsBloc
     extends Bloc<MovieRecommendationsEvent, MovieRecommendationsState> {
   final GetMovieRecommendations getMovieRecommendations;
 
-  MovieRecommendationsBloc(this.getMovieRecommendations)
+  MovieRecommendationsBloc({required this.getMovieRecommendations})
       : super(MovieRecommendationsEmpty()) {
     on<OnFetchMovieRecommendations>((event, emit) async {
       emit(MovieRecommendationsLoading());

@@ -9,7 +9,7 @@ part 'tv_recommendations_state.dart';
 class TvRecommendationsBloc
     extends Bloc<TvRecommendationsEvent, TvRecommendationsState> {
   final GetTVRecommendations getTvRecommendations;
-  TvRecommendationsBloc(this.getTvRecommendations)
+  TvRecommendationsBloc({required this.getTvRecommendations})
       : super(TvRecommendationsEmpty()) {
     on<OnFetchTvRecommendations>((event, emit) async {
       emit(TvRecommendationsLoading());
