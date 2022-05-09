@@ -8,6 +8,14 @@ import 'package:ditonton/presentation/bloc/movie/movie_recommendations/movie_rec
 import 'package:ditonton/presentation/bloc/movie/movie_search/movie_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_watchlist/movie_watchlist_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/movie_watchlist_status/movie_watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_detail/tv_detail_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_now_playing_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_popular_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_list/tv_top_rated_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_recommendations/tv_recommendations_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_search/tv_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_watchlist/tv_watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/tv_watchlist_status/tv_watchlist_status_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie/home_movie_page.dart';
@@ -45,6 +53,14 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => di.locator<MovieSearchBloc>()),
         BlocProvider(create: (_) => di.locator<MovieWatchlistBloc>()),
         BlocProvider(create: (_) => di.locator<MovieWachlistStatusBloc>()),
+        BlocProvider(create: (_) => di.locator<TvNowPlayingBloc>()),
+        BlocProvider(create: (_) => di.locator<TvRecommendationsBloc>()),
+        BlocProvider(create: (_) => di.locator<TvDetailBloc>()),
+        BlocProvider(create: (_) => di.locator<TvSearchBloc>()),
+        BlocProvider(create: (_) => di.locator<TvTopRatedBloc>()),
+        BlocProvider(create: (_) => di.locator<TvPopularBloc>()),
+        BlocProvider(create: (_) => di.locator<TvWatchlistBloc>()),
+        BlocProvider(create: (_) => di.locator<TvWatchlistStatusBloc>())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
