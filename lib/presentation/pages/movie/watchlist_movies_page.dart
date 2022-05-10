@@ -46,7 +46,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
             } else if (state is MovieWatchlistHasData) {
               return state.result.length == 0
                   ? Center(
-                      child: Text("Ups no watchlist movie found"),
+                      child: Text("Empty"),
                     )
                   : ListView.builder(
                       itemBuilder: (context, index) {

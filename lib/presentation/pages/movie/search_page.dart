@@ -61,7 +61,7 @@ class SearchPage extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return Container();
+                  return Expanded(child: Container());
                 }
               },
             ),
