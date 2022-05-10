@@ -55,13 +55,13 @@ class SearchPage extends StatelessWidget {
                     ),
                   );
                 } else if (state is MovieSearchError) {
-                  return Center(
-                    child: Text(state.message),
+                  return Expanded(
+                    child: Center(
+                      child: Text(state.message),
+                    ),
                   );
                 } else {
-                  return Center(
-                    child: Text("No Data Found"),
-                  );
+                  return Container();
                 }
               },
             ),

@@ -61,9 +61,7 @@ class SearchTvPage extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return Center(
-                    child: Text("No Data Found"),
-                  );
+                  return Container();
                 }
               },
             ),
