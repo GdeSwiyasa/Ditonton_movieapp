@@ -3,3 +3,4 @@
 
 This app build for submission final flutter expert in Dicoding Indonesia
 <br>Created by : GdeSwiyasa</br>
+This app integrated to Continuous Integration, implemented Bloc State Management, integrated to Firebase analytic and crashlytic, and clean archictecthur
